@@ -18,28 +18,16 @@
             justify-content: center;
             align-items: center;
         }
-        #trends-widget {
+        iframe {
             width: 90%;
             height: 90%;
+            border: none;
         }
     </style>
 </head>
 <body>
     <div id="map-container">
-        <div id="trends-widget"></div>
+        <iframe src="https://trends.google.com/trends/embed/explore/GEO_MAP?q=Behance&geo=world&date=today 12-m" allowfullscreen></iframe>
     </div>
-
-    <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/4017_RC01/embed_loader.js"></script>
-    <script type="text/javascript">
-        window.onload = function() {
-            setTimeout(() => {
-                trends.embed.renderExploreWidget(
-                    "GEO_MAP",
-                    {"comparisonItem":[{"keyword":"Behance","geo":"","time":"today 12-m"}],"category":0,"property":""},
-                    {"exploreQuery":"q=Behance&hl=en-GB&date=today 12-m","guestPath":"https://trends.google.com:443/trends/embed/"}
-                );
-            }, 500); // Ensures execution after full page load
-        };
-    </script>
 </body>
 </html>
