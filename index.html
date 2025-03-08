@@ -12,30 +12,34 @@
             text-align: center;
         }
         #map-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         #trends-widget {
-            width: 100%;
-            height: 100%;
+            width: 90%;
+            height: 90%;
         }
     </style>
-    <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/4017_RC01/embed_loader.js"></script>
 </head>
 <body>
     <div id="map-container">
         <div id="trends-widget"></div>
     </div>
-    
+
+    <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/4017_RC01/embed_loader.js"></script>
     <script type="text/javascript">
-        trends.embed.renderExploreWidget(
-            "GEO_MAP",
-            {"comparisonItem":[{"keyword":"Behance","geo":"","time":"today 12-m"}],"category":0,"property":""},
-            {"exploreQuery":"q=Behance&hl=en-GB&date=today 12-m","guestPath":"https://trends.google.com:443/trends/embed/"}
-        );
+        window.onload = function() {
+            setTimeout(() => {
+                trends.embed.renderExploreWidget(
+                    "GEO_MAP",
+                    {"comparisonItem":[{"keyword":"Behance","geo":"","time":"today 12-m"}],"category":0,"property":""},
+                    {"exploreQuery":"q=Behance&hl=en-GB&date=today 12-m","guestPath":"https://trends.google.com:443/trends/embed/"}
+                );
+            }, 500); // Ensures execution after full page load
+        };
     </script>
 </body>
 </html>
